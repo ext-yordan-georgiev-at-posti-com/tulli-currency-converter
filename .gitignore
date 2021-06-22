@@ -1,0 +1,37 @@
+# start python related 
+src/python/tulli-currency-converter/.venv
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+/lib/
+/lib64/
+parts/
+sdist/
+*.egg-info/
+.installed.cfg
+*.egg
+# stop python related
+
+# Local log files
+**/*/*.log
+
+.vscode/
+
+# mac
+**/.DS_Store
+.env
+
+# data dir
+dat
+
+

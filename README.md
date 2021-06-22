@@ -14,28 +14,23 @@ A proof of concept of the Python framework [Tornado](https://www.tornadoweb.org/
 <!-- The devops container is guided to the different environments via the following env vars: -->
 1. Build the docker image:
 ```bash
-make do_build_devops_docker_image
+make install
 ```
-2. Instantiate a container:
+2. Start the tornado server
 ```bash
-make do_create_container
-```
-3. Start the tornado server
-```bash
-# on a host
-./run -a do_start_tornado_server
-# via the docker
 make do_start_tornado_server
+```
+3. Test by 
 
-# and test
-curl http://localhost:8888/tulli-currency-rates|jq '.'
+```bash
+curl -s http://localhost:8888/tulli-currency-rates|jq '.'
 # filter by currency 
-curl http://localhost:8888/tulli-currency-rates?currency-code=USD|jq '.'
+curl -s http://localhost:8888/tulli-currency-rates?currency-code=USD|jq '.'
 ```  
 
 ---
 
-_Other `make` functions could be checked with the command:_
+Other `make` functions could be checked with the command:_
 ```bash
 make help
 ```

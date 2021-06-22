@@ -1,5 +1,5 @@
 
-from src.hello_world.app import start_server
+from src.tulli_currency_converter.app import start_server
 
 
 if __name__ == "__main__":

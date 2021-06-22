@@ -1,5 +1,6 @@
 #!/bin/bash
-do_start_tornado_server(){
+
+do_run_tulli_currency_converter() {
 
     export TORNADO_PORT=8888
 
@@ -21,5 +22,8 @@ do_start_tornado_server(){
     poetry run python -m src.tulli_currency_converter.app &> "$log_file" 2>&1 &
     cd "$PRODUCT_DIR"
     sleep 3
+
+    echo -e "curl test tulli_currency_converter response:"
+    curl -s http://127.0.0.1:$TORNADO_PORT/tulli-currency-rates?currency-code=USD|jq '.'
 
 }

@@ -58,7 +58,6 @@ ENV GROUP=$GRP
 ADD --chown=$USR:$GRP "." "$PRODUCT_DIR"
 WORKDIR $PRODUCT_DIR
 
-RUN $PRODUCT_DIR/src/bash/run/ubuntu/run.sh -a do_check_install_poetry \
-   && $PRODUCT_DIR/src/bash/run/ubuntu/run.sh -a do_check_install_poetry_proj
+RUN $PRODUCT_DIR/src/bash/run/ubuntu/run.sh -a do_check_install_poetry
 
-CMD cd "src/python/tulli-currency-converter" ; poetry run python -m src.hello_world.app
+CMD cd "src/python/tulli-currency-converter" ; poetry install ; poetry run python -m src.tulli_currency_converter.app
