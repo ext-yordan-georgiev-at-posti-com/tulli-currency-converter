@@ -1,0 +1,12 @@
+# python
+__pycache__/
+/src/python/**/.venv/
+
+# generated
+cnf/env/dev.env.json
+run.def
+
+# misc
+/**/tmp/*
+.env
+*.log
